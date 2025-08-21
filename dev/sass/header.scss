@@ -1,10 +1,2 @@
 @use "variables";
 
-header {
-	display: flex;
-	align-items: center;
-	height: 60px;
-	padding: 15px 12px;
-	background: variables.$bg-accent-color;
-	color: variables.$primary-hover-color
-}

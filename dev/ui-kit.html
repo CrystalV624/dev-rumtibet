@@ -1,0 +1,48 @@
+@@include('templates/head.html')
+@@include('templates/header.html')
+<main>
+    <div class="ui-grid">
+        <div class="ui-item">
+            <h2>colors</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="ui-item">
+            <h2>цвет текста, шрифт bold, шрифт italic, ссылка в тексте, ::selection</h2>
+        </div>
+        <div class="ui-item">
+            <h2>font-family</h2>
+        </div>
+        <div class="ui-item">
+            <h2>font-weight</h2>
+        </div>
+        <div class="ui-item">
+            <h2>titles h1-h6</h2>
+        </div>
+        <div class="ui-item">
+            <h2>inputs</h2>
+        </div>
+        <div class="ui-item">
+            <h2>selects</h2>
+        </div>
+        <div class="ui-item">
+            <h2>buttons</h2>
+        </div>
+    </div>
+</main>
+<style>
+    .ui-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+    }
+
+    .ui-item {
+        border: 1px solid #000000;
+        padding: 24px;
+    }
+</style>
+@@include('templates/footer.html')
