@@ -1,9 +1,49 @@
 @use "variables";
 
 @font-face {
-    font-family: 'Gilroy-Regular';
-    src: url('./assets/fonts/Gilroy-Regular.woff') format('woff');
-    font-weight: normal; 
+    font-family: 'Next-ART';
+    src: url('../assets/fonts/Next-ART_Bold.otf') format('truetype');
+    font-weight: 700; 
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../assets/fonts/NunitoSans-Light.ttf') format('truetype');
+    font-weight: 300; 
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../assets/fonts/NunitoSans-Regular.ttf') format('truetype');
+    font-weight: 400; 
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../assets/fonts/NunitoSans-SemiBold.ttf') format('truetype');
+    font-weight: 600; 
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../assets/fonts/NunitoSans-Bold.ttf') format('truetype');
+    font-weight: 700; 
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../assets/fonts/NunitoSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800; 
     font-style: normal;
     font-display: swap;
 }
