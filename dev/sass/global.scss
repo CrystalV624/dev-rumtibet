@@ -36,6 +36,28 @@ select {
     font-family: variables.$font-primary;
 }
 
+input {
+    background-color: transparent;
+    border: 1px solid #e1e3e4;
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    color: variables.$brand-light-color;
+    &::placeholder {
+        color: variables.$brand-light-color;
+    }
+}
+
+label {
+    color: variables.$brand-light-color;
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 img,
 picture,
 video,
@@ -56,7 +78,6 @@ a {
     font-weight: 600;
     text-decoration: none;
     transition: 0.3s;
-    
     &:hover {
         text-decoration: underline;
         color: variables.$primary-color;
@@ -120,6 +141,22 @@ p {
 
 footer {
     margin-top: auto;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    label {
+        margin-left: -36px;
+        cursor: pointer;
+    }
+    &:hover {
+        .date-input {
+            + label {
+                color: variables.$text-accent-color;
+            }
+        }
+    }
 }
 
 ::selection {
