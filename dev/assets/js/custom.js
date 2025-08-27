@@ -11,3 +11,6 @@ let button = {
 new AirDatepicker('#date', {
     buttons: [button, 'clear'] // Custom button, and pre-installed 'clear' button
 })  
+
+NiceSelect.bind(document.getElementById("tour-select"), {searchable: true, placeholder: 'Локация для тура', searchtext: 'zoek', selectedtext: 'geselecteerd'});
+NiceSelect.bind(document.getElementById("members-select"), {searchable: false, placeholder: 'Участники', searchtext: 'zoek', selectedtext: 'geselecteerd'});

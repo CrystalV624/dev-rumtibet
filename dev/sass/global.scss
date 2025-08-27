@@ -145,10 +145,15 @@ footer {
 
 .input-box {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    position: relative;
     label {
-        margin-left: -36px;
         cursor: pointer;
+        &.label-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
     }
     &:hover {
         .date-input {
@@ -156,6 +161,41 @@ footer {
                 color: variables.$text-accent-color;
             }
         }
+    }
+}
+
+.nice-select {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid variables.$brand-light-color;
+    padding: 0 36px 0 16px;
+    font-weight: 700;
+    font-size: 16px;
+    color: variables.$brand-light-color;
+    height: 58px;
+    line-height: 58px;
+
+    &:after {
+        border-bottom: 2px solid variables.$brand-light-color;
+        border-right: 2px solid variables.$brand-light-color;
+        height: 11px;
+        width: 11px;
+        margin-top: -8px;
+        right: 16px;
+    }
+
+    .nice-select-dropdown {
+        @include variables.background-blur;
+    }
+
+    .option:hover,
+    .option.focus,
+    .option.selected.focus {
+        @include variables.background-blur;
+    }
+
+    &.open + label {
+        opacity: 0;
     }
 }
 
