@@ -3,59 +3,59 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%; // iOS
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%; // iOS
 }
 
 body {
-    min-height: 100vh;
-    line-height: 1.5;
-    text-rendering: optimizeSpeed;
-    font-size: variables.$font-size-base;
-    background: variables.$bg-color;
-    color: variables.$brand-dark-color;
-    font-family: variables.$font-primary;
-    display: flex;
-    flex-direction: column;
+	min-height: 100vh;
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+	font-size: variables.$font-size-base;
+	background: variables.$bg-color;
+	color: variables.$brand-dark-color;
+	font-family: variables.$font-primary;
+	display: flex;
+	flex-direction: column;
 }
 
 button {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 input,
 button,
 textarea,
 select {
-    font-family: variables.$font-primary;
+	font-family: variables.$font-primary;
 }
 
 input {
-    background-color: transparent;
-    border: 1px solid #e1e3e4;
-    border-radius: 8px;
-    padding: 16px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.5;
-    color: variables.$brand-light-color;
-    &::placeholder {
-        color: variables.$brand-light-color;
-    }
+	background-color: transparent;
+	border: 1px solid #e1e3e4;
+	border-radius: 8px;
+	padding: 16px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.5;
+	color: variables.$brand-light-color;
+	&::placeholder {
+		color: variables.$brand-light-color;
+	}
 }
 
 label {
-    color: variables.$brand-light-color;
-    svg {
-        width: 18px;
-        height: 18px;
-    }
+	color: variables.$brand-light-color;
+	svg {
+		width: 18px;
+		height: 18px;
+	}
 }
 
 img,
@@ -63,34 +63,34 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    height: auto;
-    max-width: 100%;
+	display: block;
+	height: auto;
+	max-width: 100%;
 }
 
 ul[class],
 ol[class] {
-    list-style: none;
+	list-style: none;
 }
 
 a {
-    color: variables.$text-accent-color;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-    &:hover {
-        text-decoration: underline;
-        color: variables.$primary-color;
-    }
+	color: variables.$text-accent-color;
+	font-weight: 600;
+	text-decoration: none;
+	transition: 0.3s;
+	&:hover {
+		text-decoration: underline;
+		color: variables.$primary-color;
+	}
 }
 
 a:not([class]) {
-    text-decoration-skip-ink: auto;
+	text-decoration-skip-ink: auto;
 }
 
 img:not([alt]),
 img[alt=""] {
-    filter: blur(10px);
+	filter: blur(10px);
 }
 
 h1,
@@ -99,107 +99,138 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 800;
-    color: variables.$primary-color;
-    margin-bottom: 1em;
+	font-weight: 800;
+	color: variables.$primary-color;
+	margin-bottom: 1em;
 }
 
 h1 {
-    font-size: variables.$h1-font-size;
-    line-height: variables.$h1-line-height;
+	font-size: variables.$h1-font-size;
+	line-height: variables.$h1-line-height;
 }
 
 h2 {
-    font-size: variables.$h2-font-size;
-    line-height: variables.$h2-line-height;
+	font-size: variables.$h2-font-size;
+	line-height: variables.$h2-line-height;
 }
 
 h3 {
-    font-size: variables.$h3-font-size;
-    line-height: variables.$h3-line-height;
+	font-size: variables.$h3-font-size;
+	line-height: variables.$h3-line-height;
 }
 
 h4 {
-    font-size: variables.$h4-font-size;
-    line-height: variables.$h4-line-height;
+	font-size: variables.$h4-font-size;
+	line-height: variables.$h4-line-height;
 }
 
 h5 {
-    font-size: variables.$h5-font-size;
-    line-height: variables.$h5-line-height;
+	font-size: variables.$h5-font-size;
+	line-height: variables.$h5-line-height;
 }
 
 h6 {
-    font-size: variables.$h6-font-size;
-    line-height: variables.$h6-line-height;
+	font-size: variables.$h6-font-size;
+	line-height: variables.$h6-line-height;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 1rem;
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 
 footer {
-    margin-top: auto;
+	margin-top: auto;
+}
+
+.btn {
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-weight: 600;
+    line-height: 1;
+	padding: 13px 22px;
+	transition: 0.3s;
+    display: inline-block;
+	&:hover {
+		text-decoration: none;
+	}
+	&.btn_primary {
+		background-color: variables.$primary-color;
+		color: variables.$brand-light-color;
+		&:hover {
+			border-color: variables.$primary-color;
+			background-color: variables.$brand-light-color;
+			color: variables.$primary-color;
+		}
+	}
+    &.btn_lg {
+        padding: 17px 34px;
+    }
+    &.btn_secondary {
+        border: 1px solid variables.$primary-color;
+        background-color: variables.$brand-light-color;
+        color: variables.$primary-color;
+        &:hover {
+            background-color: variables.$primary-color;
+            color: variables.$brand-light-color;
+            border-color: variables.$primary-color;
+        }
+    }
 }
 
 .input-box {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    label {
-        cursor: pointer;
-        &.label-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-    }
-    &:hover {
-        .date-input {
-            + label {
-                color: variables.$text-accent-color;
-            }
-        }
-    }
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	label {
+		cursor: pointer;
+		&.label-icon {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+	}
+	&:hover {
+		.date-input {
+			+ label {
+				color: variables.$text-accent-color;
+			}
+		}
+	}
 }
 
 .nice-select {
-    background-color: transparent;
-    border-radius: 8px;
-    border: 1px solid variables.$brand-light-color;
-    padding: 0 36px 0 16px;
-    font-weight: 700;
-    font-size: 16px;
-    color: variables.$brand-light-color;
-    height: 58px;
-    line-height: 58px;
-
+	background-color: transparent;
+	border-radius: 8px;
+	border: 1px solid variables.$brand-light-color;
+	padding: 0 36px 0 16px;
+	font-weight: 700;
+	font-size: 16px;
+	color: variables.$brand-light-color;
+	height: 58px;
+	line-height: 58px;
     &:after {
-        border-bottom: 2px solid variables.$brand-light-color;
-        border-right: 2px solid variables.$brand-light-color;
-        height: 11px;
-        width: 11px;
-        margin-top: -8px;
-        right: 16px;
-    }
-
+		border-bottom: 2px solid variables.$brand-light-color;
+		border-right: 2px solid variables.$brand-light-color;
+		height: 11px;
+		width: 11px;
+		margin-top: -8px;
+		right: 16px;
+	}
     .nice-select-dropdown {
-        @include variables.background-blur;
-    }
-
-    .option:hover,
-    .option.focus,
-    .option.selected.focus {
-        @include variables.background-blur;
-    }
-
-    &.open + label {
-        opacity: 0;
-    }
+		@include variables.background-blur;
+	}
+	.option:hover,
+	.option.focus,
+	.option.selected.focus {
+		@include variables.background-blur;
+	}
+	&.open + label {
+		opacity: 0;
+	}
 }
 
 ::selection {
-    background-color: variables.$primary-color;
-    color: variables.$text-accent-color;
+	background-color: variables.$primary-color;
+	color: variables.$text-accent-color;
 }
