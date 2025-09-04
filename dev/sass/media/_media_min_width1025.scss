@@ -1,5 +1,11 @@
-@use "../../sass/variables";
+@use "../variables.scss" as variables;
 
 @media (min-width: 1025px) {
+    .header-burger {
+        display: none;
+    }
 
+    .header__mobile-container {
+        margin-left: auto;
+    }
 }

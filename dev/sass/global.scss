@@ -143,6 +143,14 @@ footer {
 	margin-top: auto;
 }
 
+.container {
+	max-width: 1204px;
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .btn {
 	border: 1px solid transparent;
 	border-radius: 4px;
@@ -167,14 +175,7 @@ footer {
         padding: 17px 34px;
     }
     &.btn_secondary {
-        border: 1px solid variables.$primary-color;
-        background-color: variables.$brand-light-color;
-        color: variables.$primary-color;
-        &:hover {
-            background-color: variables.$primary-color;
-            color: variables.$brand-light-color;
-            border-color: variables.$primary-color;
-        }
+        @include  btn_secondary;
     }
 }
 

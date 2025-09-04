@@ -31,3 +31,15 @@ $h6-line-height: 1.11;
     background-color: #ffffff33;
     backdrop-filter: blur(6px);
 }
+
+@mixin btn_secondary {
+    border: 1px solid $brand-light-color;
+    background-color: $brand-light-color;
+    color: $primary-color;
+        
+    &:hover {
+            background-color: $primary-color;
+            color: $brand-light-color;
+            border-color: $primary-color;
+        }
+    }
