@@ -1,4 +1,4 @@
-@use "variables";
+@use "variables" as variables;
 
 *,
 *::before,
@@ -175,7 +175,7 @@ footer {
         padding: 17px 34px;
     }
     &.btn_secondary {
-        @include  btn_secondary;
+        @include variables.btn_secondary;
     }
 }
 
@@ -229,6 +229,14 @@ footer {
 	&.open + label {
 		opacity: 0;
 	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.d-none {
+	display: none;
 }
 
 ::selection {

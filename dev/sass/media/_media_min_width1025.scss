@@ -1,7 +1,11 @@
 @use "../variables.scss" as variables;
 
 @media (min-width: 1025px) {
-    .header-burger {
+    .hamburger {
+        display: none;
+    }
+
+    svg {
         display: none;
     }
 
