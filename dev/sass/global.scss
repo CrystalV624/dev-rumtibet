@@ -45,6 +45,7 @@ input {
 	font-size: 16px;
 	line-height: 1.5;
 	color: variables.$brand-light-color;
+	
 	&::placeholder {
 		color: variables.$brand-light-color;
 	}
@@ -52,6 +53,7 @@ input {
 
 label {
 	color: variables.$brand-light-color;
+	
 	svg {
 		width: 18px;
 		height: 18px;
@@ -78,6 +80,7 @@ a {
 	font-weight: 600;
 	text-decoration: none;
 	transition: 0.3s;
+	
 	&:hover {
 		text-decoration: underline;
 		color: variables.$primary-color;
@@ -159,22 +162,27 @@ footer {
 	padding: 13px 22px;
 	transition: 0.3s;
     display: inline-block;
+	
 	&:hover {
 		text-decoration: none;
 	}
+	
 	&.btn_primary {
 		background-color: variables.$primary-color;
 		color: variables.$brand-light-color;
+		
 		&:hover {
 			border-color: variables.$primary-color;
 			background-color: variables.$brand-light-color;
 			color: variables.$primary-color;
 		}
 	}
-    &.btn_lg {
+    
+	&.btn_lg {
         padding: 17px 34px;
     }
-    &.btn_secondary {
+    
+	&.btn_secondary {
         @include variables.btn_secondary;
     }
 }
@@ -183,14 +191,17 @@ footer {
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	
 	label {
 		cursor: pointer;
+		
 		&.label-icon {
 			position: absolute;
 			top: 20px;
 			right: 20px;
 		}
 	}
+	
 	&:hover {
 		.date-input {
 			+ label {
@@ -210,7 +221,8 @@ footer {
 	color: variables.$brand-light-color;
 	height: 58px;
 	line-height: 58px;
-    &:after {
+    
+	&:after {
 		border-bottom: 2px solid variables.$brand-light-color;
 		border-right: 2px solid variables.$brand-light-color;
 		height: 11px;
@@ -218,14 +230,17 @@ footer {
 		margin-top: -8px;
 		right: 16px;
 	}
+
     .nice-select-dropdown {
 		@include variables.background-blur;
 	}
+
 	.option:hover,
 	.option.focus,
 	.option.selected.focus {
 		@include variables.background-blur;
 	}
+	
 	&.open + label {
 		opacity: 0;
 	}
