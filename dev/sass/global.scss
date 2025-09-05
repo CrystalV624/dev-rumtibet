@@ -188,27 +188,35 @@ footer {
 }
 
 .input-box {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	
-	label {
-		cursor: pointer;
-		
-		&.label-icon {
-			position: absolute;
-			top: 20px;
-			right: 20px;
-		}
-	}
-	
-	&:hover {
-		.date-input {
-			+ label {
-				color: variables.$text-accent-color;
-			}
-		}
-	}
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+
+    label {
+        cursor: pointer;
+        font-size: 14px;
+        padding: 9px 0 0 10px;
+
+        &.label-icon {
+            position: absolute;
+            top: 17px;
+            right: 12px;
+            padding: 0;
+        }
+    }
+
+    &:hover {
+        .date-input {
+            &::placeholder {
+                color: variables.$text-accent-color;
+            }
+
+            +label {
+                color: variables.$text-accent-color;
+            }
+        }
+    }
 }
 
 .nice-select {
