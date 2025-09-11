@@ -1,4 +1,47 @@
 <section class="first-screen">
     <div class="container">
+        <h1 class="first-screen__title">Насладись прогулкой в горах с командой единомышленников</h1>
+        <form class="first-screen__form">
+            <div class="input-box">
+                <select name="locations" id="locations-select">
+                    <option value="kyiv">Киев</option>
+                    <option value="lviv">Львов</option>
+                    <option value="odesa">Одесса</option>
+                    <option value="carpathians">Карпаты</option>
+                    <option value="kamianets">Каменец-Подольский</option>
+                    <option value="chernivtsi">Черновцы</option>
+                    <option value="kharkiv">Харьков</option>
+                    <option value="dnipro">Днепр</option>
+                    <option value="uzhhorod">Ужгород</option>
+                    <option value="bukovel">Буковель</option>
+                </select>
+                <label for="locations-select">выберите из списка</label>
+            </div>
+            <div class="input-box">
+                <input id="date" class="date-input" type="text" placeholder="Дата похода">
+                <label for="date" class="label-icon">
+                    <svg>
+                        <use href="#date-icon"></use>
+                    </svg>
+                </label>
+                <label for="date">выберете дату</label>
+            </div>
+            <div class="input-box">
+                <select name="members" id="members-select">
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="more">более 10</option>
+                </select>
+                <label for="members-select">минимум 4 человека</label>
+            </div>
+            <div class="input-box">
+                <button type="submit" class="btn btn_secondary btn_lg">Найти программу</button>
+            </div>
+        </form>
     </div>
 </section>

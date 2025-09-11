@@ -28,7 +28,7 @@ body {
 button {
 	cursor: pointer;
 }
-
+a,
 input,
 button,
 textarea,
@@ -40,11 +40,12 @@ input {
 	background-color: transparent;
 	border: 1px solid #e1e3e4;
 	border-radius: 8px;
-	padding: 16px;
+	padding: 13px 16px;
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 1.5;
 	color: variables.$brand-light-color;
+	max-width: 270px;
 	
 	&::placeholder {
 		color: variables.$brand-light-color;
@@ -159,7 +160,7 @@ footer {
 	border-radius: 4px;
 	font-weight: 600;
     line-height: 1;
-	padding: 13px 22px;
+	padding: 13px 24px;
 	transition: 0.3s;
     display: inline-block;
 	
@@ -180,6 +181,7 @@ footer {
     
 	&.btn_lg {
         padding: 17px 34px;
+		font-weight: 700;
     }
     
 	&.btn_secondary {
@@ -196,12 +198,13 @@ footer {
     label {
         cursor: pointer;
         font-size: 14px;
+		font-weight: 400;
         padding: 9px 0 0 10px;
 
         &.label-icon {
             position: absolute;
             top: 17px;
-            right: 12px;
+            right: 15px;
             padding: 0;
         }
     }
@@ -227,8 +230,10 @@ footer {
 	font-weight: 700;
 	font-size: 16px;
 	color: variables.$brand-light-color;
-	height: 58px;
-	line-height: 58px;
+	height: 52px;
+	line-height: 52px;
+	width: 100%;
+	max-width: 270px;
     
 	&:after {
 		border-bottom: 2px solid variables.$brand-light-color;
@@ -236,7 +241,7 @@ footer {
 		height: 11px;
 		width: 11px;
 		margin-top: -8px;
-		right: 16px;
+		right: 19px;
 	}
 
     .nice-select-dropdown {
@@ -258,7 +263,8 @@ footer {
 	overflow: hidden;
 }
 
-.d-none {
+.d-none,
+.hidden-select {
 	display: none;
 }
 
