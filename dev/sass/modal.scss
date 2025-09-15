@@ -1,11 +1,5 @@
 @use "variables" as variables;
 
-.overlay {
-        .modal {
-        opacity: 1;
-    }
-}  
-
 .modal {
     position: fixed;
     top: 100%;

@@ -10,6 +10,7 @@ let button = {
 
 new AirDatepicker("#date", {
 	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
+	position: "top center",
 });
 
 if (document.querySelector("select")) {
