@@ -1,5 +1,7 @@
 @use "../variables.scss" as variables;
 
 @media screen and (max-width: 1199px) {
-    
+    .btn.btn_lg {
+        padding: 17px 24px;
+    }
 }

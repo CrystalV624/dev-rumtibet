@@ -49,3 +49,18 @@ if (hamburgers.length > 0) {
 		);
 	});
 }
+
+const showModalBtn = document.querySelector('#show-program')
+const closeModal = document.querySelector('#close-modal')
+
+showModalBtn.addEventListener('click', ()=> {
+	body.classList.toggle('overflow-hidden');
+	body.classList.toggle('overlay');
+})
+
+closeModal.addEventListener('click', ()=> {
+	body.classList.toggle('overflow-hidden');
+	body.classList.toggle('overlay');
+})
+
+console.log(closeModal);

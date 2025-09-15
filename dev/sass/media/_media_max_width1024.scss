@@ -20,7 +20,7 @@
 			width: 100%;
 			height: 100%;
 			background-color: variables.$primary-color;
-			padding: 68px 16px;
+			padding: 72px 16px 50px;
             display: none;
 
 			.btn {
@@ -54,6 +54,7 @@
 				width: 6px;
 				height: 10px;
 				margin-right: 10px;
+				margin-top: 5px;
 				transition: 0.3s;
 			}
 
@@ -64,4 +65,31 @@
 			}
 		}
 	}
+
+	.first-screen {
+		height: auto;
+		min-height: 600px;
+		padding-bottom: 50px;
+	}
+
+	.first-screen-form {
+		display: none;
+		}
+
+	.modal__first-screen-form {
+		display: flex;
+		flex-direction: column;
+		background-color: variables.$primary-color;
+		border: 1px solid variables.$bg-accent-color;
+	}
+
+	.first-screen__title {
+		font-size: 28px;
+		margin-bottom: 32px;
+	}
+
+	.btn.btn_lg {
+		padding: 17px 34px;
+	}
+
 }

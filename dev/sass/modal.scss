@@ -1,0 +1,30 @@
+@use "variables" as variables;
+
+.overlay {
+        .modal {
+        opacity: 1;
+    }
+}  
+
+.modal {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.7s, transform 0.7s, top 0.7s;
+}
+
+#close-modal {
+    position: absolute;
+    right: -12px;
+    top: 11px;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+        color: variables.$text-accent-color;
+    }
+}
