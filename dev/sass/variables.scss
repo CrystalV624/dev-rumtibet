@@ -38,8 +38,12 @@ $h6-line-height: 1.11;
     color: $primary-color;
         
     &:hover {
-            background-color: $primary-color;
-            color: $brand-light-color;
-            border-color: $brand-light-color;
-        }
+        background-color: $primary-color;
+        color: $brand-light-color;
+        border-color: $brand-light-color;
     }
+}
+
+@mixin section-padding {
+    margin: 80px 0 100px;
+}

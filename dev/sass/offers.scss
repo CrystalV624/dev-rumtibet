@@ -1,1 +1,10 @@
 @use "variables" as variables;
+
+.offers {
+    @include variables.section-padding;
+    background-color: variables.$bg-color;
+}
+
+.offers__template-content {
+    padding-top: 0;
+}
