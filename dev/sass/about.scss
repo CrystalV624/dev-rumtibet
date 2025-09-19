@@ -1,1 +1,57 @@
 @use "variables" as variables;
+
+.about {
+    background-color: variables.$brand-light-color;
+    padding: 100px 0;
+}
+
+.about-container {
+    display: flex;
+    gap: 120px;
+}
+
+.about__media {
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+
+    &-item {
+        width: 350px;
+        height: 400px;
+        display: flex;
+        align-items: stretch;
+        position: relative;
+        
+        &:last-child {
+            margin: 126px 0 0 -220px;
+        }
+    }
+
+    &-img {
+        border-radius: 24px;
+    }
+}
+
+.about__content {
+    max-width: 580px;
+    padding-top: 63px;
+}
+
+.about__top-title {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+    color: variables.$text-accent-color;
+    margin-bottom: 6px;
+}
+
+.about__title {
+    margin-bottom: 38px;
+    color: variables.$brand-dark-color;
+}
+
+.about__description {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
