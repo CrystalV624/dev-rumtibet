@@ -2,7 +2,7 @@
 
 @media screen and (max-width: 1024px) {
 	.header {
-        padding-top: 20px;
+        padding-top: 12px;
         padding-bottom: 20px;
 
 		&__logo {
@@ -66,9 +66,14 @@
 		}
 	}
 
+	.container {
+		padding: 0 16px;
+		gap: 40px;
+	}
+
 	.first-screen {
 		height: auto;
-		min-height: 600px;
+		min-height: 611px;
 		padding-bottom: 50px;
 	}
 
@@ -86,5 +91,69 @@
 	.first-screen__title {
 		font-size: 28px;
 		margin-bottom: 32px;
+		letter-spacing: 0;
+	}
+
+	.about {
+		padding: 50px 0;
+
+		&__container {
+			flex-direction: column-reverse;
+		}
+
+		&__media,
+		&__content {
+			max-width: 100%;
+		}
+
+		&__media {
+			justify-content: center;
+
+			&-item {
+				width: 358px;
+				height: 416px;
+			}
+
+			&-img {
+				width: 100%;
+			}
+		}
+
+		&__content {
+			padding-top: 0;
+			display: flex;
+			flex-direction: column;
+
+			.btn {
+				margin: 0 auto;
+				padding: 13px 24px;
+			}
+		}
+
+		&__top-title {
+			font-size: 16px;
+			line-height: 1.25;
+			margin-bottom: 8px;
+		}
+
+		&__title {
+			font-size: 24px;
+			margin-bottom: 24px;
+		}
+
+		&__description {
+			font-size: 16px;
+			margin-bottom: 24px;
+		}
+	}
+
+	.about__media-item {
+		&:first-child {
+			display: none;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
 	}
 }
