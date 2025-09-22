@@ -180,6 +180,12 @@ footer {
 	padding-right: 12px;
 	margin-left: auto;
 	margin-right: auto;
+
+	&.offers__container {
+		display: flex;
+		gap: 90px;
+		align-items: center;
+	}
 }
 
 .btn {

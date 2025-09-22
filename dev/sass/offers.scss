@@ -8,3 +8,81 @@
 .offers__template-content {
     padding-top: 0;
 }
+
+.offers-advanteges {
+    display: grid;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.offers-advanteges__item {
+    position: relative;
+    display: grid;
+    gap: 4px 23px;
+    grid-template-areas: 
+        "svg title title"
+        "svg description description";
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+        background-color: #E5EEEB;
+    }
+}
+
+.offers-advantages__item-svg {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    z-index: 10;
+    grid-area: svg;
+    margin: 7px;
+}
+
+.offers-advanteges__item-title {
+    grid-area: title;
+    font-size: 18px;
+    font-weight: 700;
+    color: variables.$brand-dark-color;
+    margin: 0;
+}
+
+.offers-advanteges__item-description {
+    grid-area: description;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42;
+    color: #000000;
+    margin: 0;
+}
+
+.offers-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 510px;
+    flex: 1 0 510px;
+}
+
+.offers-image {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0 50px 0 50px;
+
+    &:nth-child(2) {
+        border-radius: 50px 0 50px 0;
+    }
+
+    &:nth-child(3) {
+        border-radius: 50px 0 50px 0;
+    }
+
+    &:nth-child(4) {
+        border-radius: 0 50px 0 50px;
+    }
+}
