@@ -13,6 +13,10 @@ new AirDatepicker("#date", {
 	position: "top center",
 });
 
+new AirDatepicker("#modal-date", {
+	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
+});
+
 if (document.querySelector("select")) {
 	NiceSelect.bind(document.getElementById("locations-select"), {
 		searchable: true,
@@ -21,6 +25,18 @@ if (document.querySelector("select")) {
 		selectedtext: "geselecteerd",
 	});
 	NiceSelect.bind(document.getElementById("members-select"), {
+		searchable: false,
+		placeholder: "Участники",
+		searchtext: "zoek",
+		selectedtext: "geselecteerd",
+	});
+	NiceSelect.bind(document.getElementById("modal-locations-select"), {
+		searchable: true,
+		placeholder: "Локация для тура",
+		searchtext: "zoek",
+		selectedtext: "geselecteerd",
+	});
+	NiceSelect.bind(document.getElementById("modal-members-select"), {
 		searchable: false,
 		placeholder: "Участники",
 		searchtext: "zoek",
@@ -51,17 +67,3 @@ if (hamburgers.length > 0) {
 	});
 }
 
-const showModalBtn = document.querySelector('#show-program')
-const closeModal = document.querySelector('#close-modal')
-
-showModalBtn.addEventListener('click', ()=> {
-	body.classList.toggle('overflow-hidden');
-	body.classList.toggle('overlay');
-})
-
-closeModal.addEventListener('click', ()=> {
-	body.classList.toggle('overflow-hidden');
-	body.classList.toggle('overlay');
-})
-
-console.log(closeModal);
