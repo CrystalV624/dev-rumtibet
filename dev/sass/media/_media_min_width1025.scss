@@ -2,7 +2,7 @@
 
 @media (min-width: 1025px) {
     .hamburger,
-    #show-modal,
+    form ~ .btn,
     .header__nav-link svg  {
         display: none;
     }
