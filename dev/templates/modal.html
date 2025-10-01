@@ -1,6 +1,6 @@
 <div class="modal" id="show-program">
     <div class="modal-body">
-        <button type="button" id="close-modal" class="close-modal" data-close-modal>
+        <button type="button" class="close-modal" data-close-modal>
             <svg class="close-modal__svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon-close-modal"></use>
             </svg>
@@ -18,7 +18,6 @@
                     <option value="dnipro">Днепр</option>
                     <option value="uzhhorod">Ужгород</option>
                     <option value="bukovel">Буковель</option>
-                    <span class="current">Локация для тура</span>
                 </select>
                 <label for="modal-locations-select">выберите из списка</label>
             </div>
@@ -41,7 +40,6 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                     <option value="more">более 10</option>
-                    <span class="current">Участники</span>
                 </select>
                 <label for="modal-members-select">минимум 4 человека</label>
             </div>
@@ -51,10 +49,73 @@
         </form>
     </div>
 </div>
-<div class="modal" id="consultation">
-    <button type="button" id="close-modal" class="close-modal" data-close-modal>
-        <svg class="close-modal__svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <use href="#icon-close-modal"></use>
-        </svg>
-    </button>
+<div class="modal modal-template" id="consultation">
+    <div class="modal-body">
+        <button type="button" class="close-modal" data-close-modal>
+            <svg class="close-modal__svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <use href="#icon-close-modal"></use>
+            </svg>
+        </button>
+        <div class="template-form-wrapper">
+            <h2 class="modal-template__title">Нужна консультация?</h2>
+            <h5 class="modal-template__subtitle">Заполните форму ниже и наш менеджер свяжется с Вами в ближайшее время!</h5>
+            <form class="template-form">
+                <div class="input-box">
+                    <label for="user-name">Имя</label>
+                    <input type="text" inputmode="text" name="user-name" id="user-name" placeholder="Введите свое имя">
+                </div>
+                <div class="input-box">
+                    <label for="user-number">Номер телефона</label>
+                    <input type="tel" inputmode="tel" name="user-number" id="user-number" placeholder="+380">
+                </div>
+                <div class="input-box">
+                    <label for="user-email">Email</label>
+                    <input type="email" inputmode="email" name="user-email" id="user-email" placeholder="Введите email">
+                </div>
+                <div class="input-box">
+                    <textarea name="letter" id="letter" placeholder="Сопроводительное письмо"></textarea>
+                </div>
+                <div class="input-box">
+                    <button type="submit" class="btn btn_secondary btn_lg">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal modal-template" id="request">
+    <div class="modal-body">
+        <button type="button" class="close-modal" data-close-modal>
+            <svg class="close-modal__svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <use href="#icon-close-modal"></use>
+            </svg>
+        </button>
+        <div class="template-form-wrapper">
+            <h2 class="modal-template__title">Регистрация на тур</h2>
+            <h5 class="modal-template__subtitle">Заполните форму ниже и наш менеджер свяжется с Вами в ближайшее время!</h5>
+            <form class="template-form">
+                <div class="input-box">
+                    <label for="user-name">Имя</label>
+                    <input type="text" inputmode="text" name="user-name" id="request-name" placeholder="Введите свое имя">
+                </div>
+                <div class="input-box">
+                    <label for="user-number">Номер телефона</label>
+                    <input type="tel" inputmode="tel" name="user-number" id="request-number" placeholder="+380">
+                </div>
+                <div class="input-box">
+                    <label for="user-email">Email</label>
+                    <input type="email" inputmode="email" name="user-email" id="request-email" placeholder="Введите email">
+                </div>
+                <div class="input-box">
+                    <textarea name="letter" id="request-letter" placeholder="Сопроводительное письмо">
+Локация: 
+Дата тура:
+Участники:
+                    </textarea>
+                </div>
+                <div class="input-box">
+                    <button type="submit" class="btn btn_secondary btn_lg">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

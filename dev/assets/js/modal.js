@@ -2,7 +2,7 @@ window.addEventListener('load', ()=> {
     const initModal = ()=> {
         const trigerModalButton = document.querySelectorAll('[data-triger-modal]')
         const buttonCloseModal = document.querySelectorAll('[data-close-modal]')
-        const modal = document.querySelector('.modal');
+        const modal = document.querySelectorAll('.modal');
 
         const openModal = (modal)=> {
             modal.classList.add('show')
@@ -30,9 +30,8 @@ window.addEventListener('load', ()=> {
                 closeModal()
             })
         })
-
-        modal.addEventListener('click', (event)=> {
-            event.target === modal ? closeModal() : null
+        modal.forEach(item => {
+            item.addEventListener('click', (event)=>  event.target === item ? closeModal() : null);
         })
     }
     document.querySelector('[data-triger-modal]') ? initModal() : null

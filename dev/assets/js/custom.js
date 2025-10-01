@@ -52,18 +52,32 @@ const forEach = function (t, o, r) {
 };
 
 const hamburgers = document.querySelectorAll(".hamburger");
-const burgerMenu = document.querySelector('.header__mobile-container');
-const body = document.querySelector('body');
+const burgerMenu = document.querySelector(".header__mobile-container");
+const body = document.querySelector("body");
 
 if (hamburgers.length > 0) {
 	forEach(hamburgers, function (hamburger) {
-		hamburger.addEventListener("click", function () {
+		hamburger.addEventListener(
+			"click",
+			function () {
 				this.classList.toggle("is-active");
-                burgerMenu.classList.toggle("show");
-                body.classList.toggle('overflow-hidden');
+				burgerMenu.classList.toggle("show");
+				body.classList.toggle("overflow-hidden");
 			},
 			false
 		);
 	});
 }
+
+const inputTel = document.querySelectorAll('[type="tel"]')
+
+inputTel.forEach(item => {
+	const inputId = item.id
+	IMask(
+		document.getElementById(inputId), 
+	{
+		mask: "+{38}(000)000-00-00",
+	}
+	)
+})
 

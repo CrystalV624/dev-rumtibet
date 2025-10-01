@@ -6,22 +6,28 @@
     opacity: 0;
     inset: 0;
     transition: opacity 0.5s, background-color 0.5s, backdrop-filter 0.5s;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     background-color: #12121200;
     backdrop-filter: blur(0px);
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &.show {
+        @include variables.background-blur;
         opacity: 1;
         z-index: 20;
-        background-color: #12121273;
-        backdrop-filter: blur(10px);
     }
     
     .nice-select,
-    input {
+    input,
+    textarea {
         max-width: 100%;
+    }
+
+    .nice-select-dropdown {
+        background-color: variables.$primary-color;
     }
 
     &-body {
@@ -30,7 +36,38 @@
     }
 }
 
-#close-modal {
+.modal-template {
+    &.show {
+        background-color: #5cb7ff4d;
+    }
+
+    .input-box {
+        label {
+            padding-top: 0;
+            font-size: 16px;
+        }
+
+        input,
+        textarea {
+            color: variables.$brand-dark-color;
+        }
+    }
+}
+
+.template-form-wrapper {
+    @include variables.background-blur;
+    border: 1px solid variables.$bg-color;
+    border-radius: 12px;
+    padding: 36px 36px 48px;
+}
+
+.template-form {
+    display: grid;
+    gap: 24px
+}
+
+
+.close-modal {
     position: absolute;
     right: -12px;
     top: 11px;

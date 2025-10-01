@@ -26,6 +26,12 @@
         gap: 24px;
     }
 
+    .input-box {
+        label:not(.label-icon) {
+            padding-top: 9px;
+        }
+    }
+
     .input-box:last-child {
         max-width: 213px;
     }
