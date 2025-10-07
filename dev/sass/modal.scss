@@ -80,3 +80,45 @@
     }
 }
 
+.steps__nav {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.steps__first-step,
+.steps__second-step {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.steps__second-step_hidden {
+    display: none;
+}
+
+
+.message {
+    border: 1px solid variables.$brand-light-color;
+    border-radius: 2px;
+    padding: 12px;
+    color: #ff0000;
+    font-weight: 600;
+    width: 100%;
+    line-height: 1.4;
+    opacity: 1;
+    transition: border-color 0.5s, line-height 1s, opacity 1s;
+}
+
+.message__hidden {
+    border-color: transparent;
+    border-width: 0;
+    padding: 0;
+    line-height: 0;
+    opacity: 0;
+}
+
+.message__valid {
+    color: #00ff00;
+}
+

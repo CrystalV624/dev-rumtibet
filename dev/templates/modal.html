@@ -6,45 +6,75 @@
             </svg>
         </button>
         <form class="first-screen-form modal__first-screen-form">
-            <div class="input-box">
-                <select name="locations" id="modal-locations-select" class="hidden-select" data-changed="false">
-                    <option value="kyiv">Киев</option>
-                    <option value="lviv">Львов</option>
-                    <option value="odesa">Одесса</option>
-                    <option value="carpathians">Карпаты</option>
-                    <option value="kamianets">Каменец-Подольский</option>
-                    <option value="chernivtsi">Черновцы</option>
-                    <option value="kharkiv">Харьков</option>
-                    <option value="dnipro">Днепр</option>
-                    <option value="uzhhorod">Ужгород</option>
-                    <option value="bukovel">Буковель</option>
-                </select>
-                <label for="modal-locations-select">выберите из списка</label>
+            <div class="steps">
+                <div class="steps__first-step">
+                    <div class="input-box">
+                        <select name="locations" id="modal-locations-select" class="hidden-select" data-changed="false">
+                            <option value="" disabled selected>Выберите из списка</option>
+                            <option value="kyiv">Киев</option>
+                            <option value="lviv">Львов</option>
+                            <option value="odesa">Одесса</option>
+                            <option value="carpathians">Карпаты</option>
+                            <option value="kamianets">Каменец-Подольский</option>
+                            <option value="chernivtsi">Черновцы</option>
+                            <option value="kharkiv">Харьков</option>
+                            <option value="dnipro">Днепр</option>
+                            <option value="uzhhorod">Ужгород</option>
+                            <option value="bukovel">Буковель</option>
+                        </select>
+                        <label for="modal-locations-select">выберите из списка</label>
+                    </div>
+                    <div class="input-box">
+                        <input id="modal-date" class="date-input" type="text" placeholder="Дата похода" data-changed="false">
+                        <label for="modal-date" class="label-icon">
+                            <svg>
+                                <use href="#date-icon"></use>
+                            </svg>
+                        </label>
+                        <label for="modal-date">выберете дату</label>
+                    </div>
+                    <div class="input-box">
+                        <select name="members" id="modal-members-select" class="hidden-select" data-changed="false">
+                            <option value="" disabled selected>Участники</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="more">более 10</option>
+                        </select>
+                        <label for="modal-members-select">минимум 4 человека</label>
+                    </div>
+                </div>
+                <div class="steps__second-step steps__second-step_hidden">
+                    <div class="input-box">
+                        <label for="progream-user-name">Имя</label>
+                        <input type="text" inputmode="text" name="program-user-name" id="program-name" placeholder="Введите свое имя">
+                    </div>
+                    <div class="input-box">
+                        <label for="program-user-number">Номер телефона</label>
+                        <input type="tel" inputmode="tel" name="program-user-number" id="program-number" placeholder="+380">
+                    </div>
+                    <div class="input-box">
+                        <label for="program-user-email">Email</label>
+                        <input type="email" inputmode="email" name="program-user-email" id="program-email" placeholder="Введите email">
+                    </div>
+                    <div class="input-box">
+                        <textarea name="letter" id="request-data" placeholder="Сопроводительное письмо"></textarea>
+                    </div> 
+                </div>
+                <div class="steps__nav">
+                    <button type="button" class="btn btn_secondary btn_step-first">step 1</button>
+                    <button type="button" class="btn btn_secondary btn_step-second">step 2</button>
+                </div>
             </div>
             <div class="input-box">
-                <input id="modal-date" class="date-input" type="text" placeholder="Дата похода" data-changed="false">
-                <label for="modal-date" class="label-icon">
-                    <svg>
-                        <use href="#date-icon"></use>
-                    </svg>
-                </label>
-                <label for="modal-date">выберете дату</label>
+                <div class="message message__hidden"></div>
             </div>
             <div class="input-box">
-                <select name="members" id="modal-members-select" class="hidden-select" data-changed="false">
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="more">более 10</option>
-                </select>
-                <label for="modal-members-select">минимум 4 человека</label>
-            </div>
-            <div class="input-box">
-                <button type="button" class="btn btn_secondary btn_lg" disabled>Оставить заявку</button>
+                <button type="button" id="submit-button" class="btn btn_secondary btn_lg">Оставить заявку</button>
             </div>
         </form>
     </div>

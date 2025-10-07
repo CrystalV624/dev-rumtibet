@@ -38,24 +38,53 @@ trigerRequest.addEventListener('click', setValue)
 const modalLocationsSelect = document.querySelector('#modal-locations-select')
 const modalDate = document.querySelector('#modal-date')
 const modalMembersSelect =  document.querySelector('#modal-members-select')
+const submitButton = document.querySelector('#submit-button')
+const message = document.querySelector('.message')
+const stepsNav = document.querySelector('.steps__nav')
 
-const checketValue = ()=> {
-    console.log(modalLocationsSelect.value);
-    if(modalLocationsSelect.value === "") {
-        console.log('ok')
+const formConfig = {
+    emptyMessage: "",
+    errorMessage: "Все поля обязательны для заполнения. Заполните, пожалуйста, поля.",
+    validMessage: "Все поля заполнены. ✓",
+}
+
+const errorMessage = () => {
+    message.classList.remove('message__hidden')
+    message.classList.remove('message__valid')
+    message.innerHTML = formConfig.errorMessage
+}
+
+const removeValidMessage = () => {
+    message.classList.add('message__hidden')
+    message.innerHTML = formConfig.emptyMessage
+}
+
+const validMessage = () => {
+    message.classList.add('message__valid')
+    message.innerHTML = formConfig.validMessage
+    setTimeout(removeValidMessage, 2000);
+}
+
+const showNav =()=> {
+    stepsNav.classList.add('.steps__nav_show')
+}
+
+const stepTwo = ()=> {
+    validMessage()
+    console.log('step 2');
+}
+
+const checkedValue = ()=> {
+    if (modalLocationsSelect.value === "" || modalDate.value === "" || modalMembersSelect.value === "") {
+        errorMessage()
     }
-
-    if(modalDate.value === "") {
-        console.log('ok')
-    }
-
-    console.log(modalMembersSelect.value);
-    if(modalMembersSelect.value === "") {
-        console.log('ok')
+    else {
+        stepTwo()
     }
 }
 
-checketValue()
+submitButton.addEventListener('click', checkedValue);
+
 
 
 
