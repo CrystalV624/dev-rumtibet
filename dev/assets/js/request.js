@@ -41,6 +41,12 @@ const modalMembersSelect =  document.querySelector('#modal-members-select')
 const submitButton = document.querySelector('#submit-button')
 const message = document.querySelector('.message')
 const stepsNav = document.querySelector('.steps__nav')
+const stepsNavButtonFirst = document.querySelector('.steps__nav .btn_step-first')
+const stepsNavButtonSecond = document.querySelector('.steps__nav .btn_step-second')
+const layoutStepFirst = document.querySelector('.steps__first-step')
+const layoutStepSecond = document.querySelector('.steps__second-step')
+
+layoutStepSecond.classList.add('steps__second-step_hidden')
 
 const formConfig = {
     emptyMessage: "",
@@ -66,11 +72,26 @@ const validMessage = () => {
 }
 
 const showNav =()=> {
-    stepsNav.classList.add('.steps__nav_show')
+    stepsNav.classList.add('steps__nav_show')
 }
 
-const stepTwo = ()=> {
-    validMessage()
+const showStepFirst = ()=> {
+    layoutStepFirst.classList.remove('steps__first-step_hidden')
+    layoutStepSecond.classList.add('steps__second-step_hidden')
+}
+
+const showStepSecond = ()=> {
+    layoutStepFirst.classList.add('steps__first-step_hidden')
+    layoutStepSecond.classList.remove('steps__second-step_hidden')
+}
+
+stepsNavButtonFirst.addEventListener('click', showStepFirst)
+stepsNavButtonSecond.addEventListener('click', showStepSecond)
+
+const stepSecond = ()=> {
+    validMessage();
+    showNav();
+    showStepSecond();
     console.log('step 2');
 }
 
@@ -79,7 +100,7 @@ const checkedValue = ()=> {
         errorMessage()
     }
     else {
-        stepTwo()
+        stepSecond()
     }
 }
 
