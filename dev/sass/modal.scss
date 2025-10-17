@@ -135,3 +135,17 @@
     color: #00ff00;
 }
 
+.error-field [data-required-field],
+.error-field .nice-select {
+    background-color: #ff000066;
+    box-shadow: 0px 0px 8px 1px  #ff0000;
+    transition: background-color 1s, box-shadow 0.2s;
+}
+
+.valid-field [data-required-field],
+.valid-field .nice-select {
+    background-color: #38ed181f;
+    box-shadow: 0px 0px 8px 1px  #20b407;
+    transition: background-color 1s, box-shadow 0.2s;
+}
+

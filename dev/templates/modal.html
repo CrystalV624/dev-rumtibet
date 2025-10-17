@@ -5,11 +5,11 @@
                 <use href="#icon-close-modal"></use>
             </svg>
         </button>
-        <form class="first-screen-form modal__first-screen-form">
+        <form id="program-form" class="first-screen-form modal__first-screen-form">
             <div class="steps">
                 <div class="steps__first-step">
                     <div class="input-box">
-                        <select name="locations" id="modal-locations-select" class="hidden-select" data-changed="false">
+                        <select name="locations" id="modal-locations-select" class="hidden-select" data-required-field data-changed="false">
                             <option value="" disabled selected>Выберите из списка</option>
                             <option value="kyiv">Киев</option>
                             <option value="lviv">Львов</option>
@@ -25,7 +25,7 @@
                         <label for="modal-locations-select">выберите из списка</label>
                     </div>
                     <div class="input-box">
-                        <input id="modal-date" class="date-input" type="text" placeholder="Дата похода" data-changed="false">
+                        <input id="modal-date" class="date-input" type="text" placeholder="Дата похода" data-required-field data-changed="false">
                         <label for="modal-date" class="label-icon">
                             <svg>
                                 <use href="#date-icon"></use>
@@ -34,7 +34,7 @@
                         <label for="modal-date">выберете дату</label>
                     </div>
                     <div class="input-box">
-                        <select name="members" id="modal-members-select" class="hidden-select" data-changed="false">
+                        <select name="members" id="modal-members-select" class="hidden-select" data-required-field data-changed="false">
                             <option value="" disabled selected>Участники</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
@@ -50,16 +50,16 @@
                 </div>
                 <div class="steps__second-step">
                     <div class="input-box">
-                        <label for="progream-user-name">Имя</label>
-                        <input type="text" inputmode="text" name="program-user-name" id="program-name" placeholder="Введите свое имя">
+                        <label for="program-user-name">Имя</label>
+                        <input type="text" inputmode="text" name="program-user-name" id="program-name" placeholder="Введите свое имя" data-required-field>
                     </div>
                     <div class="input-box">
                         <label for="program-user-number">Номер телефона</label>
-                        <input type="tel" inputmode="tel" name="program-user-number" id="program-number" placeholder="+380">
+                        <input type="tel" inputmode="tel" name="program-user-number" id="program-number" placeholder="+380" data-required-field>
                     </div>
                     <div class="input-box">
                         <label for="program-user-email">Email</label>
-                        <input type="email" inputmode="email" name="program-user-email" id="program-email" placeholder="Введите email">
+                        <input type="email" inputmode="email" name="program-user-email" id="program-email" placeholder="Введите email" data-required-field>
                     </div>
                     <div class="input-box">
                         <textarea name="letter" id="request-data" placeholder="Сопроводительное письмо"></textarea>
@@ -69,9 +69,6 @@
                     <button type="button" class="btn btn_secondary btn_step-first btn_step-first">step 1</button>
                     <button type="button" class="btn btn_secondary btn_step-second btn_step-second">step 2</button>
                 </div>
-            </div>
-            <div class="input-box">
-                <div class="message message__hidden"></div>
             </div>
             <div class="input-box">
                 <button type="button" id="submit-button" class="btn btn_secondary btn_lg">Оставить заявку</button>
