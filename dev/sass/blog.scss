@@ -1,1 +1,127 @@
 @use "variables" as variables;
+
+.blog {
+    @include variables.section-padding;
+    background-color: variables.$bg-accent-color;
+
+    &-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 20px;
+    margin-bottom: 50px;
+    margin-top: -10px;
+    }
+
+    &__card {
+    display: flex;
+    align-items: stretch;
+    padding: 16px;
+    max-height: 312px;
+    background-color: variables.$brand-light-color;
+    box-shadow: 0px 0px 15px 0px #18121e1f;
+    border-radius: 10px;
+    transition: box-shadow 0.3s, transform 0.3s;
+
+        &.active {
+            box-shadow: 0px 0px 25px rgba(24, 18, 30, 0.25);
+            transform: scale(1.02);
+        }
+
+        &:hover {
+            .blog__card-title {
+                color: variables.$primary-color;
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 24px;
+    }
+
+    &-img {
+    width: 230px;
+    height: 280px;
+    border-radius: 6px;
+    object-fit: cover;
+    }
+
+    &__card-title {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: variables.$brand-dark-color;
+    margin: 16px auto 0;
+    text-align: left;
+    transition: color 0.3s, text-decoration 0.5s;
+    }
+
+    &__card-description {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    text-align: left;
+    margin-top: -19px;
+    }
+
+    &__card-footer {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    }
+
+    &__date {
+    color: variables.$text-accent-color;
+    font-weight: 700;
+    }
+
+    &__link {
+    color: variables.$primary-color;
+    font-weight: 700;
+    transition: color 0.5s;
+
+        &:hover {
+        text-decoration: none;
+        color: variables.$text-accent-color;
+        }
+    }
+}
+
+.blog__card:nth-child(2) .blog__card-description_hidden {
+    max-height: 98px;
+    overflow: hidden;
+    margin-top: 0px;
+    transition: max-height 0.4s;
+}
+
+.blog__card:nth-child(2) .blog__card-description_hidden.blog__card-description_visible {
+    max-height: 250px;
+}
+
+//.blog__card:nth-child(2) .blog__card-description_hidden {
+    //transition: max-height 0.4s ease-in-out;
+//}
+
+.blog__card:nth-child(3) .blog__card-description {
+    margin-bottom: 23px;
+}
+
+.blog__card:nth-child(4) .blog__card-title {
+    margin-left: 0;
+}
+
+.blog__card:nth-child(4) .blog__card-description {
+    margin-bottom: 108px;
+}
+
+.blog__card:nth-child(4) .blog__link {
+    margin-right: -70px;
+}
+

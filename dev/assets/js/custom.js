@@ -91,3 +91,14 @@ inputTel.forEach(item => {
 	)
 })
 
+document.querySelectorAll('.blog__card-title').forEach(title => {
+	title.addEventListener('click', event => {
+    	const card = event.target.closest('.blog__card');
+    	card.classList.toggle('active');
+	});
+});
+
+const visibleDecsription = document.querySelector('.blog__card:nth-child(2) .blog__card-description_hidden')
+visibleDecsription.addEventListener('click', ()=> {
+	visibleDecsription.classList.toggle('blog__card-description_visible')
+})
