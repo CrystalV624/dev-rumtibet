@@ -2,4 +2,43 @@
 
 .gallery {
     @include variables.section-padding;
+    background-color: variables.$bg-accent-color;
 }
+
+.gallery-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 50px;
+}
+
+.gallery-img {
+    border-radius: 6px;
+    object-fit: cover;
+    width: 280px;
+    height: 250px;
+}
+
+.btn-pinterest {
+    display: inline-block;
+    padding: 16px 29px;
+    background-color: variables.$primary-color;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    color: variables.$brand-light-color;
+    border: 1px solid variables.$primary-color;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.4s;
+
+        &:hover {
+            color: variables.$text-accent-color;
+            text-decoration: none;
+            transform: scale(0.97);
+    }
+}
+
