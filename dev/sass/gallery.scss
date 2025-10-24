@@ -5,13 +5,43 @@
     background-color: variables.$bg-accent-color;
 }
 
+.gallery-top-title,
+.gallery-title {
+    margin-left: -19px;
+}
+
 .gallery-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 50px;
+    margin: -14px auto 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+                        "img1 img1 img2 img3"
+                        "img4 img5 img5 img6";                   
+}
+
+.gallery-img1 {
+    grid-area: img1;
+}
+
+.gallery-img2 {
+    grid-area: img2;
+}
+
+.gallery-img3 {
+    grid-area: img3;
+}
+
+.gallery-img4 {
+    grid-area: img4;
+}
+
+.gallery-img5 {
+    grid-area: img5;
+}
+
+.gallery-img6 {
+    grid-area: img6;
 }
 
 .gallery-img {
@@ -19,15 +49,30 @@
     object-fit: cover;
     width: 280px;
     height: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(1.6);
+    }
+
+}
+
+.gallery-content .gallery-img:first-child,
+.gallery-content .gallery-img:nth-child(5) {
+    width: 580px;
 }
 
 .btn-pinterest {
     display: inline-block;
-    padding: 16px 29px;
+    padding: 16px 38px;
     background-color: variables.$primary-color;
     font-size: 16px;
     line-height: 1.25;
-    letter-spacing: 1.2px;
     font-weight: 600;
     color: variables.$brand-light-color;
     border: 1px solid variables.$primary-color;
