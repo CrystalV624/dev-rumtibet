@@ -1,14 +1,19 @@
 @use "variables" as variables;
 
-.testimonials {
+.popular {
     @include variables.section-padding;
     background-color: variables.$brand-light-color;
 }
 
-.template-common__container {
+.template-container_centered {
     text-align: center;
     margin-top: -2px;
 }
+
+//.template-top-title_centered,
+//.template-title_centered {
+    //text-align: center;
+//}
 
 
 .template-common-content {

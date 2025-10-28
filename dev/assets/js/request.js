@@ -38,6 +38,9 @@ trigerRequest.addEventListener('click', setValue)
 const modalLocationsSelect = document.querySelector('#modal-locations-select')
 const modalDate = document.querySelector('#modal-date')
 const modalMembersSelect =  document.querySelector('#modal-members-select')
+const programUserName = document.querySelector('#program-user-name')
+const programUserEmail = document.querySelector('#program-e-mail')
+const programUserTelephone = document.querySelector('#program-telephone')
 const submitButton = document.querySelector('#submit-button')
 const message = document.querySelector('.message')
 const stepsNav = document.querySelector('.steps__nav')
@@ -48,100 +51,114 @@ const layoutStepSecond = document.querySelector('.steps__second-step')
 const requiredFieldStepFirst = layoutStepFirst.querySelectorAll('[data-required-field]')
 const requiredFieldStepSecond = layoutStepSecond.querySelectorAll('[data-required-field]')
 
+submitButton.setAttribute('data-step', '1')
+const submitButtonStepFirst = document.querySelector("[data-step='1']")
+
 layoutStepSecond.classList.add('steps__second-step_hidden')
 
 const formConfig = {
-    emptyField: true,
     emptyMessage: "",
     errorMessage: "Все поля обязательны для заполнения. Заполните, пожалуйста, поля.",
-    validMessage: "Все поля заполнены. ✓",
+    validMessage: "Поле заполнено. ✓",
+    warnnigMessage: "warnnigMessage!",
+    emptyField: true,
 }
 
-console.log("emptyField: " + formConfig.emptyField);
-
-const createErrorMsg = (field)=> {
-    const errorMsg =  `
+const createMessageText = (field, text) => {
+    const msg = `
                 <div class="message">
-                    ${formConfig.errorMessage}
+                    ${text} 
                 </div>
             `;
-    field.closest('.input-box').insertAdjacentHTML('beforeend', errorMsg);
+
+    const message = field.closest('.input-box').querySelector('.message')
+    message ? message.innerHTML = text : field.closest('.input-box').insertAdjacentHTML('beforeEnd', msg);
+}
+
+const createSuccessMessage = (field) => {
+    field.closest('.input-box').classList.remove('error-field')
+    field.closest('.input-box').classList.add('valid-field')
+    createMessageText(field, formConfig.validMessage)
+}
+
+const createErrorMessage = (field) => {
+    field.closest('.input-box').classList.remove('valid-field')
+    field.closest('.input-box').classList.add('error-field')
+    createMessageText(field, formConfig.errorMessage)
 }
 
 requiredFieldStepFirst.forEach(field => {
-    field.addEventListener('change', ()=> {
-        console.log("change");
-        field.closest('.input-box').classList.add('valid-field')
-
-        if (!field.value) {
-            console.log("значение не указано");
-            field.closest('.input-box').classList.add('error-field')
-            field.closest('.input-box').classList.remove('valid-field')
-            console.log('createErrorMessage(field)');
-
-            createErrorMsg(field)
-        }
+    field.addEventListener('change', () => {
+        field.value === "" ? createErrorMessage(field) : createSuccessMessage(field)
     })
 })
 
-const errorMessage = ()=> {
+requiredFieldStepSecond.forEach(field => {
+    field.addEventListener('input', () => {
+        field.value === "" ? createErrorMessage(field) : createSuccessMessage(field)
+    })
+})
+
+const createMessage = () => {
     requiredFieldStepFirst.forEach(field => {
-        if (field.value === "") {
-            formConfig.emptyField = true
-            field.closest('.input-box').classList.add('error-field')
-            field.closest('.input-box').classList.remove('valid-field')
-            console.log("emptyField: " + formConfig.emptyField);
-        }
-        else if (field.value !== "") {
-            formConfig.emptyField = false
-            field.closest('.input-box').classList.remove('error-field')
-            field.closest('.input-box').classList.add('valid-field')
-            console.log("emptyField: " + formConfig.emptyField);
-        }
+        field.value === "" ? createErrorMessage(field) : createSuccessMessage(field)
     })
 }
 
-const removeValidMessage = () => {
-    message.classList.add('message__hidden')
-    message.innerHTML = formConfig.emptyMessage
+const createMessageStepSecond = () => {
+    requiredFieldStepSecond.forEach(field => {
+        field.value === "" ? createErrorMessage(field) : createSuccessMessage(field)
+    })
 }
 
-const validMessage = () => {
-    message.classList.add('message__valid')
-    message.innerHTML = formConfig.validMessage
-    setTimeout(removeValidMessage, 2000);
-}
-
-const showNav =()=> {
+const showNav = () => {
     stepsNav.classList.add('steps__nav_show')
 }
 
-const showStepFirst = ()=> {
+const showStepFirst = () => {
+    submitButton.setAttribute('data-step', '1')
     layoutStepFirst.classList.remove('steps__first-step_hidden')
     layoutStepSecond.classList.add('steps__second-step_hidden')
 }
 
-const showStepSecond = ()=> {
-    layoutStepFirst.classList.add('steps__first-step_hidden')
-    layoutStepSecond.classList.remove('steps__second-step_hidden')
+const showStepSecond = () => {
+    if (modalLocationsSelect.value === "" || modalDate.value === "" || modalMembersSelect.value === "") {
+        createMessage()
+    } else {
+        submitButton.setAttribute('data-step', '2')
+        layoutStepFirst.classList.add('steps__first-step_hidden')
+        layoutStepSecond.classList.remove('steps__second-step_hidden')
+    }
 }
 
 stepsNavButtonFirst.addEventListener('click', showStepFirst)
 stepsNavButtonSecond.addEventListener('click', showStepSecond)
 
-const stepSecond = ()=> {
-    validMessage();
-    showNav();
-    showStepSecond();
-    console.log('step 2');
+const checkedValue2 = () => {
+
+    if (programUserName.value === "" || programUserEmail.value === "" || programUserTelephone.value === "") {
+        createMessageStepSecond()
+    } else if (programUserName.value !== "" && programUserEmail.value !== "" && programUserTelephone.value !== "" && modalLocationsSelect.value !== "" && modalDate.value !== "" && modalMembersSelect.value !== "") {
+        console.log("submit form");
+        submitButton.setAttribute('type', 'submit')
+    }
 }
 
-const checkedValue = ()=> {
-    errorMessage()
+const stepSecond = () => {
+    console.log('step 2');
+    submitButton.setAttribute('data-step', '2')
+
+    const submitButtonStepSecond = document.querySelector("[data-step='2']")
+    submitButtonStepSecond.addEventListener('click', checkedValue2);
+
+    showNav();
+    showStepSecond()
+}
+
+const checkedValue = () => {
     if (modalLocationsSelect.value === "" || modalDate.value === "" || modalMembersSelect.value === "") {
-        errorMessage()
-    }
-    else {
+        createMessage()
+    } else {
         stepSecond()
     }
 }

@@ -112,15 +112,13 @@
 
 
 .message {
-    border: 1px solid variables.$brand-light-color;
-    border-radius: 2px;
-    padding: 12px;
-    color: #ff0000;
+    font-size: 12px;
+    border-radius: 8px;
     font-weight: 600;
+    transition: border-color 0.5s, line-height 1s, opacity 1s;
     width: 100%;
     line-height: 1.4;
     opacity: 1;
-    transition: border-color 0.5s, line-height 1s, opacity 1s;
 }
 
 .message__hidden {
@@ -131,21 +129,43 @@
     opacity: 0;
 }
 
-.message__valid {
-    color: #00ff00;
+.error-field {
+
+    [data-required-field],
+    .nice-select {
+        transition: box-shadow 0.2s, background-color 1.5s, ;
+        background-color: #ff000030;
+        box-shadow: 0px 0px 8px 1px red;
+
+    }
+
+    .message {
+        color: #f00;
+    }
 }
 
-.error-field [data-required-field],
-.error-field .nice-select {
-    background-color: #ff000066;
-    box-shadow: 0px 0px 8px 1px  #ff0000;
-    transition: background-color 1s, box-shadow 0.2s;
+.valid-field {
+
+    [data-required-field],
+    .nice-select {
+        transition: box-shadow 0.2s, background-color 1.5s, ;
+        background-color: #1eff0030;
+        box-shadow: 0px 0px 8px 1px #37ff00;
+    }
+
+    .message {
+        color: #0f0;
+    }
 }
 
-.valid-field [data-required-field],
-.valid-field .nice-select {
-    background-color: #38ed181f;
-    box-shadow: 0px 0px 8px 1px  #20b407;
-    transition: background-color 1s, box-shadow 0.2s;
+
+[data-required-field] ~ label:not(.label-icon) {
+    position: relative;
+    &::before {
+        content: "*";
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 }
 

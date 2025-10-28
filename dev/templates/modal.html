@@ -1,7 +1,7 @@
 <div class="modal" id="show-program">
     <div class="modal-body">
         <button type="button" class="close-modal" data-close-modal>
-            <svg class="close-modal__svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <svg class="close-modal__svg">
                 <use href="#icon-close-modal"></use>
             </svg>
         </button>
@@ -9,7 +9,7 @@
             <div class="steps">
                 <div class="steps__first-step">
                     <div class="input-box">
-                        <select name="locations" id="modal-locations-select" class="hidden-select" data-required-field data-changed="false">
+                        <select name="locations" id="modal-locations-select" class="hidden-select" data-required-field>
                             <option value="" disabled selected>Выберите из списка</option>
                             <option value="kyiv">Киев</option>
                             <option value="lviv">Львов</option>
@@ -25,7 +25,7 @@
                         <label for="modal-locations-select">выберите из списка</label>
                     </div>
                     <div class="input-box">
-                        <input id="modal-date" class="date-input" type="text" placeholder="Дата похода" data-required-field data-changed="false">
+                        <input id="modal-date" class="date-input" type="text" placeholder="Дата похода" data-required-field>
                         <label for="modal-date" class="label-icon">
                             <svg>
                                 <use href="#date-icon"></use>
@@ -34,7 +34,7 @@
                         <label for="modal-date">выберете дату</label>
                     </div>
                     <div class="input-box">
-                        <select name="members" id="modal-members-select" class="hidden-select" data-required-field data-changed="false">
+                        <select name="members" id="modal-members-select" class="hidden-select" data-required-field>
                             <option value="" disabled selected>Участники</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
@@ -50,19 +50,19 @@
                 </div>
                 <div class="steps__second-step">
                     <div class="input-box">
+                        <input type="text" inputmode="text" name="program-user-name" id="program-user-name" placeholder="Введите свое имя" data-required-field>
                         <label for="program-user-name">Имя</label>
-                        <input type="text" inputmode="text" name="program-user-name" id="program-name" placeholder="Введите свое имя" data-required-field>
                     </div>
                     <div class="input-box">
+                        <input type="tel" inputmode="tel" name="program-user-number" id="program-telephone" placeholder="+380" data-required-field>
                         <label for="program-user-number">Номер телефона</label>
-                        <input type="tel" inputmode="tel" name="program-user-number" id="program-number" placeholder="+380" data-required-field>
                     </div>
                     <div class="input-box">
+                        <input type="email" inputmode="email" name="program-user-email" id="program-e-mail" placeholder="Введите email" data-required-field>
                         <label for="program-user-email">Email</label>
-                        <input type="email" inputmode="email" name="program-user-email" id="program-email" placeholder="Введите email" data-required-field>
                     </div>
                     <div class="input-box">
-                        <textarea name="letter" id="request-data" placeholder="Сопроводительное письмо"></textarea>
+                        <textarea name="letter" id="program-data" placeholder="Сопроводительное письмо"></textarea>
                     </div> 
                 </div>
                 <div class="steps__nav">

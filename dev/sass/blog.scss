@@ -2,7 +2,6 @@
 
 .blog {
     @include variables.section-padding;
-    background-color: variables.$bg-accent-color;
 
     &-content {
     display: grid;
