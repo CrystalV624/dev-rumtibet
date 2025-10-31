@@ -102,3 +102,13 @@ const visibleDecsription = document.querySelector('.blog__card:nth-child(2) .blo
 visibleDecsription.addEventListener('click', ()=> {
 	visibleDecsription.classList.toggle('blog__card-description_visible')
 })
+
+const swiper = new Swiper('.swiper-popular', {
+    loop: true,
+	slidesPerView: 3,
+	spaceBetween: 20,
+	speed: 2500,
+	//autoplay: {
+		//delay: 1000,
+	//}
+});
