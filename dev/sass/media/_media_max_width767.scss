@@ -1,6 +1,25 @@
 @use "../variables.scss" as variables;
 
 @media screen and (max-width: 767px) {
+    .swiper-slide-popular {
+        --swipe-height: 400px;
+    }
+
+    .popular-info {
+        --text-padding: 72px;
+        padding: 20px 24px;
+    }
+
+    .popular-info__title {
+        font-size: 18px;
+    }
+
+    .popular-info__price {
+        font-size: 16px;
+        padding: 6px 12px;
+        top: 24px;
+        right: 24px;
+    }
     
     
 }

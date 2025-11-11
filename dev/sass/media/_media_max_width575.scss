@@ -1,5 +1,7 @@
 @use "../variables.scss" as variables;
 
 @media screen and (max-width: 575px) {
-    
+    .swiper-popular {
+        max-width: 285px;
+    }
 }

@@ -8,4 +8,33 @@
     .about-container {
         gap: 72px;
     }
+
+    .swiper-slide-popular {
+        --swipe-height: 430px;
+
+        &:hover {
+            .popular-info-subtitle {
+                margin-bottom: 22px;
+            }
+
+            .popular-info__description {
+                max-height: 190px;
+                overflow-y: auto;
+                margin: auto;
+            }
+        }
+    }
+
+    .popular-info__title {
+        font-size: 22px;
+    }
+
+    .popular-info__price {
+        font-size: 18px;
+    }
+
+    .popular-info__description {
+        line-height: 1.3;
+    }
+
 }

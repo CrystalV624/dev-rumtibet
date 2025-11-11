@@ -25,6 +25,11 @@ body {
 	flex-direction: column;
 }
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 button {
 	cursor: pointer;
 }
@@ -343,3 +348,23 @@ footer {
 	background-color: variables.$primary-color;
 	color: variables.$text-accent-color;
 }
+
+.slider-container {
+	position: relative;
+}
+
+.swiper-popular-button-prev,
+.swiper-popular-button-next {
+    color: variables.$primary-color;
+}
+
+.swiper-counter {
+	text-align: center;
+	font-size: 22px;
+	font-weight: 600;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	max-width: 240px;
+}
+

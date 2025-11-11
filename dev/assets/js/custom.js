@@ -103,12 +103,31 @@ visibleDecsription.addEventListener('click', ()=> {
 	visibleDecsription.classList.toggle('blog__card-description_visible')
 })
 
-const swiper = new Swiper('.swiper-popular', {
+const swiperPopular = new Swiper('.swiper-popular', {
     loop: true,
-	slidesPerView: 3,
+	slidesPerView: 1,
 	spaceBetween: 20,
-	speed: 2500,
-	//autoplay: {
-		//delay: 1000,
-	//}
+	speed: 1000,
+	navigation: {
+    nextEl: '.swiper-popular-button-next',
+    prevEl: '.swiper-popular-button-prev',
+	},
+	autoplay: {
+		delay: 0,
+	},
+	breakpoints: {
+		576: {
+			slidesPerView: 2,
+		},
+		1025: {
+			slidesPerView: 3,
+		}
+	}
 });
+
+swiperPopular.on("slideChange afterInit slidesLengthChange", function () {
+	let currentSlide = this.activeIndex + 1;
+	document.querySelector('.swiper-counter__current').innerHTML = `${currentSlide}/`;
+	document.querySelector('.swiper-counter__total').innerHTML = `${this.slides.length}`;
+});
+//swiperPopular.init();
