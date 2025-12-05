@@ -2,10 +2,10 @@
 
 .modal {
     position: fixed;
-    z-index: -10;
     opacity: 0;
     inset: 0;
     transition: opacity 0.5s, background-color 0.5s, backdrop-filter 0.5s;
+    z-index: -10;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -64,20 +64,6 @@
 .template-form {
     display: grid;
     gap: 24px;
-}
-
-
-.close-modal {
-    position: absolute;
-    right: -12px;
-    top: 11px;
-    z-index: 10;
-    border: none;
-    background-color: transparent;
-
-    &:hover {
-        color: variables.$text-accent-color;
-    }
 }
 
 .steps {
@@ -167,5 +153,56 @@
         left: 0;
         top: 0;
     }
+}
+
+input:-webkit-autofill {
+    background-color:  #77a0c3;
+    -webkit-box-shadow: 0 0 0px 1000px  #77a0c3 inset;
+    -webkit-text-fill-color: #fdfdfd;
+    transition: background-color 0s ease-in-out;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px  #77a0c3 inset;
+    -webkit-text-fill-color: #fdfdfd;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Nunito Sans", sans-serif;
+    background-color:  #77a0c3;
+}
+
+.modal-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.template-video {
+	max-width: 850px;
+    width: 100%;
+	height: auto;
+}
+
+.video-parts {
+    display: flex;
+    max-width: 850px;
+    width: 100%;
+    justify-content: center;
+}
+
+[data-current-time] {
+    width: 100%;
+}
+
+.video-controls {
+    text-align: center;
 }
 

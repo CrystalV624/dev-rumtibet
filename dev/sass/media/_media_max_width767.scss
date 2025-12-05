@@ -1,10 +1,6 @@
 @use "../variables.scss" as variables;
 
 @media screen and (max-width: 767px) {
-    .swiper-slide-popular {
-        --swipe-height: 400px;
-    }
-
     .popular-info {
         --text-padding: 72px;
         padding: 20px 24px;
@@ -20,6 +16,60 @@
         top: 24px;
         right: 24px;
     }
-    
-    
+
+    .swiper-slide-popular {
+        --swipe-height: 400px;
+
+        &:hover {
+            .btn {
+                padding: 15px 20px;
+            }
+        }
+    }
+
+    .swiper-counter {
+        --swiper-navigation-size: 18px;
+        font-size: var(--swiper-navigation-size);
+        max-width: 120px;
+        padding: var(--swiper-navigation-size) 0;
+    }
+
+    .gallery {
+        &-img {
+            height: 250px;
+        }
+
+        &-close {
+            top: 5px;
+            right: 5px;
+        }
+
+        &-counter {
+            bottom: 0;
+        }
+    }
+
+    .gallery__img  {
+        height: 250px;
+    }
+
+    .footer-container {
+        padding-bottom: 80px;
+        flex-direction: column;
+        gap: var(--separate);
+    }
+
+    .footer__address-description,
+    .footer-address__row {
+        margin-bottom: 30px;
+    }
+
+    .footer-navigation {
+        flex-direction: column;
+        gap: var(--separate);
+    }
+
+    .footer__coppyright-container {
+        justify-content: center;
+    }
 }

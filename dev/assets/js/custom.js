@@ -10,18 +10,7 @@ let button = {
 
 new AirDatepicker("#date", {
 	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
-	position: "top center",
 });
-
-let buttonProgram = {
-	content: "Select 2025-10-02",
-	className: "custom-button-classname",
-	onClick: (dp) => {
-		let date = new Date("2025-10-02");
-		dp.selectDate(date);
-		dp.setViewDate(date);
-	},
-};
 
 new AirDatepicker("#modal-date", {
 	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
@@ -91,18 +80,6 @@ inputTel.forEach(item => {
 	)
 })
 
-document.querySelectorAll('.blog__card-title').forEach(title => {
-	title.addEventListener('click', event => {
-    	const card = event.target.closest('.blog__card');
-    	card.classList.toggle('active');
-	});
-});
-
-const visibleDecsription = document.querySelector('.blog__card:nth-child(2) .blog__card-description_hidden')
-visibleDecsription.addEventListener('click', ()=> {
-	visibleDecsription.classList.toggle('blog__card-description_visible')
-})
-
 const swiperPopular = new Swiper('.swiper-popular', {
     loop: true,
 	slidesPerView: 1,
@@ -113,7 +90,7 @@ const swiperPopular = new Swiper('.swiper-popular', {
     prevEl: '.swiper-popular-button-prev',
 	},
 	autoplay: {
-		delay: 0,
+		delay: 5000,
 	},
 	breakpoints: {
 		576: {
@@ -125,9 +102,135 @@ const swiperPopular = new Swiper('.swiper-popular', {
 	}
 });
 
-swiperPopular.on("slideChange afterInit slidesLengthChange", function () {
-	let currentSlide = this.activeIndex + 1;
-	document.querySelector('.swiper-counter__current').innerHTML = `${currentSlide}/`;
-	document.querySelector('.swiper-counter__total').innerHTML = `${this.slides.length}`;
-});
-//swiperPopular.init();
+function initBlog() {
+	const breakpoint = window.matchMedia("(min-width:768px)");
+
+	let swiperBlog;
+
+	const breakpointChecker = function () {
+		if (breakpoint.matches === true) {
+			console.log(breakpoint.matches);
+			if (swiperBlog !== undefined) swiperBlog.destroy(true, true);
+			return;
+		} else if (breakpoint.matches === false) {
+			return enableSwiper();
+		}
+	};
+
+	const enableSwiper = function () {
+		swiperBlog = new Swiper(".swiper-blog", {
+			slidesPerView: 1,
+			speed: 1000,
+			loop: true,
+			spaceBetween: 100,
+			navigation: {
+				nextEl: '.swiper-blog-button-next',
+				prevEl: '.swiper-blog-button-prev',
+			},
+		});
+		setupSwiperCounter(swiperBlog, '.swiper-blog-counter__current', '.swiper-blog-counter__total');
+	};
+	breakpoint.addListener(breakpointChecker);
+	breakpointChecker();
+}
+initBlog()
+
+function setupSwiperCounter(swiper, currentSelector, totalSelector) {
+const updateCounter = () => {
+    document.querySelector(currentSelector).innerHTML = `${swiper.realIndex + 1}&nbsp/`;
+    document.querySelector(totalSelector).innerHTML = `&nbsp${swiper.slides.length}`;
+};
+
+updateCounter();
+
+swiper.on('slideChange slidesLengthChange', updateCounter)
+}
+
+setupSwiperCounter(swiperPopular, '.swiper-popular-counter__current', '.swiper-popular-counter__total');
+
+const initLightBox = () => {
+	const galleryItems = document.querySelectorAll('.gallery-grid__item')
+	const galleryOverlay = document.getElementById('galleryOverlay')
+	const galleryImg = document.getElementById('galleryImage')
+	const prevBtn = document.getElementById('galleryPrev')
+	const nextBtn = document.getElementById('galleryNext')
+	const closeBtn = document.getElementById('galleryClose')
+	const counter = document.getElementById('galleryCounter')
+	let current = 0
+
+	galleryItems.forEach((item, index) => {
+		item.addEventListener('click', event => {
+			event.preventDefault()
+			current = index
+			galleryOverlay.classList.add('open')
+			document.body.style.overflow = 'hidden'
+			show(index)
+		});
+	});
+
+	const show = (index) => {
+		galleryImg.src = galleryItems[index].href
+		galleryImg.alt = galleryItems[index].title
+		counter.textContent = `${index + 1} / ${galleryItems.length}`
+	}
+
+	const next = () => {
+		current = (current + 1) % galleryItems.length
+		show(current)
+	}
+
+	const prev = () => {
+		current = (current - 1 + galleryItems.length) % galleryItems.length
+		show(current)
+	}
+
+	const close = () => {
+		galleryOverlay.classList.remove('open')
+		document.body.style.overflow = ''
+	}
+
+	nextBtn.addEventListener('click', next)
+	prevBtn.addEventListener('click', prev)
+	closeBtn.addEventListener('click', close)
+
+	galleryOverlay.addEventListener('click', event => {
+		event.target === galleryOverlay ? close() : null;
+	});
+};
+
+initLightBox()
+
+function initGallery() {
+	const breakpoint = window.matchMedia("(min-width:768px)");
+
+	let swiperGallery;
+
+	const breakpointChecker = function () {
+		if (breakpoint.matches === true) {
+			if (swiperGallery !== undefined) swiperGallery.destroy(true, true);
+			return;
+		} 
+		
+		else if (breakpoint.matches === false) {
+			return enableSwiper();
+		}
+	};
+
+	const enableSwiper = function () {
+		swiperGallery = new Swiper(".swiper-gallery", {
+			slidesPerView: 1,
+			speed: 1000,
+			loop: true,
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.swiper-gallery-button-next',
+				prevEl: '.swiper-gallery-button-prev',
+			},
+		});
+		setupSwiperCounter(swiperGallery, '.swiper-gallery-counter__current', '.swiper-gallery-counter__total');
+	};
+	breakpoint.addListener(breakpointChecker);
+	breakpointChecker();
+}
+
+initGallery()

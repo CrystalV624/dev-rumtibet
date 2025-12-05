@@ -1,3 +1,142 @@
 @use "variables" as variables;
 
+.footer {
+    background-color: variables.$primary-color;
+    color: variables.$bg-color;
+
+    &-container {
+        display: flex;
+        padding-top: calc(var(--separate) * -1 * 2);
+        padding-bottom: calc(var(--separate) * -1);
+        gap: 24px;
+    }
+
+    &__address-title {
+        color: variables.$bg-color;
+        font-weight: 700;
+        margin-bottom: 17px;
+    }
+
+    &__address-description {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42;
+        color: variables.$bg-accent-color;
+        margin-bottom: calc(var(--separate) * -1);
+    }
+
+    &-address__row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+        gap: 12px 24px;
+    }
+
+    &-address__link {
+        color: variables.$bg-accent-color;
+        font-size: 14px;
+        line-height: 1.28;
+        text-decoration: underline;
+        transition: color 0.3s;
+
+        &:hover {
+            color: variables.$text-accent-color;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__social-link {
+        color: variables.$bg-accent-color;
+
+        &:hover {
+            color: variables.$text-accent-color;
+        }
+    }
+
+    &__social-svg {
+        --size: 32px;
+        width: var(--size);
+        height: var(--size);
+    }
+
+    &-navigation {
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+    &-nav-item {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    &-nav__title {
+        color: variables.$bg-color;
+        font-weight: 700;
+    }
+
+    &-nav__list {
+        padding-left: 20px;
+    }
+
+    &-nav__item {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-nav__link {
+        color: variables.$brand-light-color;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.28;
+        position: relative;
+
+        &:hover {
+            color: variables.$text-accent-color;
+            text-decoration: underline;
+        }
+    }
+
+    &-nav__svg {
+        width: 10px;
+        height: 14px;
+        position: absolute;
+        left: -17px;
+        top: -1px;
+    }
+
+    &__coppyright {
+        background: variables.$brand-dark-color;
+        padding: 24px 0;
+    }
+
+    &__coppyright-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px 24px;
+        flex-wrap: wrap;
+    }
+
+    &__coppyright-link {
+        color: variables.$brand-light-color;
+        text-decoration: underline;
+        font-size: 14px;
+
+        &_develop {
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: variables.$text-accent-color;
+        }
+    }
+}
+
 

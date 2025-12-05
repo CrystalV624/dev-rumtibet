@@ -53,3 +53,7 @@ $h6-line-height: 1.11;
 @mixin section-padding {
     padding: 80px 0 100px;
 }
+
+:root {
+    --separate: -80px;
+}

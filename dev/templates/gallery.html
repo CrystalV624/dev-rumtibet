@@ -1,17 +1,49 @@
 <section class="gallery">
-    <div class="container template-container_centered">
+    <div class="container">
         <div class="template-content template-content_centered">
-            <h3 class="template-top-title template-top-title_centered gallery-top-title">фото-отчет</h3>
-            <h2 class="template-title template-title_centered gallery-title">Делимся впечатлениями</h2>
+            <h3 class="template-top-title template-top-title_centered">фото-отчет</h3>
+            <h2 class="template-title template-title_centered ">Делимся впечатлениями</h2>
         </div>
-        <div class="gallery-content">
-            <img src="./assets/img/gallery-img-1.png" class="gallery-img gallery-img1" alt="trip">
-            <img src="./assets/img/gallery-img-2.png" class="gallery-img gallery-img2" alt="trip">
-            <img src="./assets/img/gallery-img-3.png" class="gallery-img gallery-img3" alt="trip">
-            <img src="./assets/img/gallery-img-4.png" class="gallery-img gallery-img4" alt="trip">
-            <img src="./assets/img/gallery-img-5.png" class="gallery-img gallery-img5" alt="trip">
-            <img src="./assets/img/gallery-img-6.png" class="gallery-img gallery-img6" alt="trip">
+        <div class="swiper swiper-gallery">
+            <div class="gallery-grid swiper-wrapper">
+                <a href="./assets/img/gallery-img-xl-1.png" class="gallery-grid__item gallery-grid__item_1 swiper-slide" title="alt for gallery-1-xl.png">
+                    <img src="./assets/img/gallery-img-1.png" class="gallery__img" alt="gallery-1">
+                </a>
+                <a href="./assets/img/gallery-img-xl-2.png" class="gallery-grid__item gallery-grid__item_2 swiper-slide" title="alt for gallery-2-xl.png">
+                    <img src="./assets/img/gallery-img-2.png" class="gallery__img" alt="gallery-2">
+                </a>
+                <a href="./assets/img/gallery-img-xl-3.png" class="gallery-grid__item gallery-grid__item_3 swiper-slide" title="alt for gallery-3-xl.png">
+                    <img src="./assets/img/gallery-img-3.png" class="gallery__img" alt="gallery-3">
+                </a>
+                <a href="./assets/img/gallery-img-xl-4.png" class="gallery-grid__item gallery-grid__item_4 swiper-slide" title="alt for gallery-4-xl.png">
+                    <img src="./assets/img/gallery-img-4.png" class="gallery__img" alt="gallery-4">
+                </a>
+                <a href="./assets/img/gallery-img-xl-5.png" class="gallery-grid__item gallery-grid__item_5 swiper-slide" title="alt for gallery-5-xl.png">
+                    <img src="./assets/img/gallery-img-5.png" class="gallery__img" alt="ery-5">
+                </a>
+                <a href="./assets/img/gallery-img-xl-6.png" class="gallery-grid__item gallery-grid__item_6 swiper-slide" title="alt for gallery-6-xl.png">
+                    <img src="./assets/img/gallery-img-6.png" class="gallery__img" alt="gallery-6">
+                </a>
+            </div>
         </div>
-        <a href="https://www.pinterest.com/" target="_blank" class="btn-pinterest">Наш pinterest</a>
+        <div class="swiper-counter">
+            <div class="swiper-button-prev swiper-gallery-button-prev"></div>
+            <div class="swiper-gallery-counter__current"></div>
+            <div class="swiper-gallery-counter__total"></div>
+            <div class="swiper-button-next swiper-gallery-button-next"></div>
+        </div>
+        <div class="gallery-overlay" id="galleryOverlay">
+            <div class="gallery-inner">
+                <button class="gallery-btn gallery-prev" id="galleryPrev">&#10094;</button>
+                <img src="" alt="" class="gallery-img" id="galleryImage">
+                <button class="gallery-btn gallery-next" id="galleryNext">&#10095;</button>
+                <button class="gallery-close" id="galleryClose">
+                    <svg>
+                        <use href="#icon-close-modal"></use>
+                    </svg>
+                </button>
+                <div class="gallery-counter" id="galleryCounter">0 / 0</div>
+            </div>
+        </div>
     </div>
 </section>

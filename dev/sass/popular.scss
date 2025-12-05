@@ -5,27 +5,7 @@
     background-color: variables.$brand-light-color;
 }
 
-.template-container_centered {
-    margin-top: -2px;
-
-    .btn {
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-.template-content_centered {
-    margin: 0 auto auto;
-    padding-top: 0;
-}
-
-.template-top-title_centered,
-.template-title_centered {
-    text-align: center;
-}
-
 .swiper-popular {
-    margin-bottom: 49px;
     border-radius: 32px;
 }
 
@@ -40,7 +20,8 @@
     &:hover {
         .popular-info {
             height: var(--swipe-height);
-            border-radius: 30px;
+            border-radius: 32px;
+            margin: 0 auto;
         }
 
         .popular-rating {
@@ -59,10 +40,13 @@
         .popular-info__description {
             opacity: 1;
             height: auto;
+            text-align: left;
         }
 
         .btn {
             display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -86,9 +70,9 @@
     align-items: center;
     width: 65px;
     padding: 4px 8px;
-    gap: 4px;
+    gap: 7px;
     position: absolute;
-    top: 50px;
+    top: 59px;
     right: 0;
     transition: opacity 0.3s;
 }
@@ -113,7 +97,7 @@
     --text-padding: 86px;
     @include variables.background-blur;
     margin-top: auto;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 32px 32px;
     padding: 20px 32px 23px;
     position: relative;
     display: flex;
@@ -121,7 +105,7 @@
     min-height: 90px;
     overflow: hidden;
     transition: height 0.3s;
-
+    margin-bottom: -15px;
     .btn {
         display: none;
         margin-top: auto;
@@ -133,7 +117,7 @@
     line-height: 1.2;
     font-weight: 700;
     color: variables.$brand-light-color;
-    margin-bottom: 1px;
+    margin-bottom: 8px;
     padding-right: var(--text-padding);
 }
 
@@ -142,6 +126,7 @@
     line-height: 1.28;
     color: variables.$brand-light-color;
     padding-right: var(--text-padding);
+    margin-top: -6px;
     transition: margin-bottom 0.5s;
 }
 
@@ -194,7 +179,7 @@
 .popular-info__price {
     display: inline-block;
     position: absolute;
-    top: 25px;
+    top: 27px;
     right: 32px;
     color: #FDFDFD;
     background-color: #ffffff4d;
